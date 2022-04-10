@@ -1,7 +1,7 @@
 <template>
   <h1>Welcome to Reaction Timer Game</h1>
-  <button @click="start">START</button>
-  <ClickBlock v-if="isPlaying" />
+  <button @click="start" :disabled="isPlaying">START</button>
+  <ClickBlock v-if="isPlaying" :delay="delay" />
 </template>
 
 <script>
@@ -35,5 +35,8 @@ export default {
   text-align: center;
   color: #155391;
   margin-top: 60px;
+}
+h1 {
+  color: #fff;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="block">CLICK ME NOW!</div>
+  <div class="block">CLICK ME NOW! {{ delay }}</div>
 </template>
 
 <script>
