@@ -1,11 +1,29 @@
 <template>
-  <h1>Reaction timer.</h1>
+  <h1>Welcome to Reaction Timer Game</h1>
+  <button @click="start">START</button>
+  <ClickBlock v-if="isPlaying" />
 </template>
 
 <script>
+import ClickBlock from "./components/ClickBlock.vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    ClickBlock,
+  },
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+    };
+  },
+  methods: {
+    start() {
+      this.delay = Math.floor(2000 + Math.random() * 4000);
+      this.isPlaying = true;
+      console.log(this.delay);
+    },
+  },
 };
 </script>
 
